@@ -4,8 +4,16 @@ import HomeBackCircle from "@/components/backCircles/HomeBackCircle/HomeBackCirc
 export default function Home() {
   return (
     <>
-    <CourseCard title="Course 1" image="https://via.placeholder.com/150" price={100} />
-    <HomeBackCircle />
+    {/* Landing Section */}
+    <section className="landing-section" style={{height:"90vh", display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"center"}}>
+    <div style={{width:"50%", height:"100%", position:"relative"}}>
+        <HomeBackCircle />
+      </div>
+      <div style={{width:"50%", height:"100%"}}>
+
+      </div>
+
+    </section>
     </>
   );
 }
