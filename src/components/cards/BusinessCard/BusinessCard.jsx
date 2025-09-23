@@ -3,7 +3,7 @@ import ProfileCircles from "@/components/Circles/ProfileCicles/ProfileCircles";
 import DateDisplay from "@/components/CardSpecialists/Date/Date";
 import SalaryLessons from "@/components/CardSpecialists/SalaryLessons/SalaryLessons";
 import "./style.css";
-export default function BusinessCard({type, actionButton = {}, href = "", salary = 100, lessons = 24, profileImage = "/photo.jpg", name = "انس ابراهيم حلمي", role = "مبرمج تطبيقات"}) {
+export default function BusinessCard({type, actionButton = {}, href = "", salary = 100, lessons = 24, profileImage = "/test/photo.jpg", name = "انس ابراهيم حلمي", role = "مبرمج تطبيقات"}) {
   return (
 <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
