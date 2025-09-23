@@ -1,0 +1,57 @@
+.stars-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Cairo', sans-serif;
+}
+
+.stars-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  transition: all 0.2s ease;
+}
+
+.star.filled {
+  color: #F57005;
+  fill: #ff7300;
+}
+
+.star.empty {
+  color: #E0E0E0;
+  fill: none;
+}
+
+.reviews-text {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Size variations */
+.stars-container.small .reviews-text {
+  font-size: 12px;
+}
+
+.stars-container.large .reviews-text {
+  font-size: 16px;
+}
+
+/* Hover effects */
+.stars-container:hover .star.filled {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .stars-container {
+    gap: 6px;
+  }
+  
+  .reviews-text {
+    font-size: 12px;
+  }
+}
