@@ -1,17 +1,18 @@
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import React from 'react';
-import '@fontsource/cairo/400.css';
-import '@fontsource/cairo/500.css';
-import '@fontsource/cairo/600.css';
-import '@fontsource/cairo/700.css';
+import './global.css';
+import '@fontsource/urbanist/400.css';
+import '@fontsource/urbanist/500.css';
+import '@fontsource/urbanist/600.css';
+import '@fontsource/urbanist/700.css';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="en" dir="ltr">
       
       <body style={{ 
-        fontFamily: 'Cairo, sans-serif', 
+        fontFamily: 'Urbanist, sans-serif', 
         margin: 0, 
         padding: 0, 
         boxSizing: 'border-box',

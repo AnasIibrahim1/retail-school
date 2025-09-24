@@ -74,20 +74,20 @@ export default function Header() {
         {/* Navigation Links */}
         <nav className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-links">
-            <li><Link href="/" onClick={closeMenu}>الرئيسية</Link></li>
-            <li><Link href="/about" onClick={closeMenu}>من نحن</Link></li>
-            <li><Link href="/blog" onClick={closeMenu}>الأخبار</Link></li>
-            <li><Link href="/contact" onClick={closeMenu}>اتصل بنا</Link></li>
-            <li><Link href="/teacher" onClick={closeMenu}>المدرسين</Link></li>
-            <li><Link href="/courses" onClick={closeMenu}>الدورات</Link></li>
-            <li><Link href="/gallery" onClick={closeMenu}>المعرض</Link></li>
+            <li><Link href="/" onClick={closeMenu}>Home</Link></li>
+            <li><Link href="/about" onClick={closeMenu}>About Us</Link></li>
+            <li><Link href="/blog" onClick={closeMenu}>News</Link></li>
+            <li><Link href="/contact" onClick={closeMenu}>Contact Us</Link></li>
+            <li><Link href="/teacher" onClick={closeMenu}>Teachers</Link></li>
+            <li><Link href="/courses" onClick={closeMenu}>Courses</Link></li>
+            <li><Link href="/gallery" onClick={closeMenu}>Gallery</Link></li>
             {/* Mobile Auth Buttons */}
             <div className="mobile-auth-buttons">
               <Link href="https://admin.al-maher.net/ar/login" className="mobile-signin-btn" onClick={closeMenu}>
-                تسجيل الدخول
+                Sign In
               </Link>
               <Link href="/register" className="mobile-signup-btn" onClick={closeMenu}>
-                إنشاء حساب
+                Sign Up
               </Link>
             </div>
           </ul>
@@ -113,7 +113,7 @@ export default function Header() {
                 <form onSubmit={handleSearch} className="search-form">
                   <input
                     type="text"
-                    placeholder="ابحث هنا..."
+                    placeholder="Search here..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="search-input"
@@ -133,16 +133,16 @@ export default function Header() {
           {/* Authentication Buttons */}
           <div className="auth-buttons">
             <Link href="https://admin.al-maher.net/ar/login" className="signin-btn" aria-label="Sign In">
-              تسجيل الدخول
+              Sign In
             </Link>
             <Link href="/register" className="signup-btn" aria-label="Sign Up">
-              إنشاء حساب
+              Sign Up
             </Link>
           </div>
 
           {/* Get in Touch Button */}
           <Link href="/contact" className="get-in-touch-btn" onClick={closeMenu}>
-            تواصل معنا
+            Get in Touch
           </Link>
 
           {/* Mobile Menu Toggle */}

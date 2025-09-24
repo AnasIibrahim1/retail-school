@@ -1,17 +1,28 @@
-import CourseCard from "@/components/cards/CourseCard/CourseCard";
 import HomeBackCircle from "@/components/backCircles/HomeBackCircle/HomeBackCircle";
+import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
+import './style.css';
 
 export default function Home() {
   return (
     <>
     {/* Landing Section */}
-    <section className="landing-section" style={{height:"90vh", display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"center"}}>
-    <div style={{width:"50%", height:"100%", position:"relative"}}>
+    <section className="landing-section">
+    <div className="landing-section-content-left" >
+        <div className="landing-section-content-left-text">
+        <img className="landing-section-content-left-text-img" src="/text/Welcome.svg" alt="image"/>
+        <h1 className="landing-section-content-left-text-h1">to the</h1>
+        </div>
+        <h1 className="landing-section-content-left-text-h1">
+        beginning of our
+        journey learning
+        </h1>
+        <p className="landing-section-content-left-text-p">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+        <GeneralButton backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="/courses" style={{marginTop:"20px"}}>Get Started</GeneralButton>
+      </div>
+    <div className="landing-section-content-right">
         <HomeBackCircle />
       </div>
-      <div style={{width:"50%", height:"100%"}}>
-
-      </div>
+     
 
     </section>
     </>
