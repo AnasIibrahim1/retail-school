@@ -1,5 +1,6 @@
 import HomeBackCircle from "@/components/backCircles/HomeBackCircle/HomeBackCircle";
 import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
+import ContactCard from "@/components/cards/ContactCard/ContactCard";
 import './style.css';
 
 export default function Home() {
@@ -24,6 +25,13 @@ export default function Home() {
       </div>
      
 
+    </section>
+
+    {/* About Section */}
+    <section className="about-section">
+      <div className="about-section-content">
+      <ContactCard />
+      </div>
     </section>
     </>
   );
