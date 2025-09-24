@@ -3,6 +3,7 @@ import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
 import ContactCard from "@/components/cards/ContactCard/ContactCard";
 import './style.css';
 import StatusBox from "@/components/Boxes/StatusBox/StatusBox";
+import AboutBox from "@/components/Boxes/AboutBox/AboutBox";
 
 export default function Home() {
   return (
@@ -29,12 +30,9 @@ export default function Home() {
     </section>
 
     {/* About Section */}
-    <section className="about-section">
-      <div className="about-section-content">
-      <ContactCard />
-      </div>
-<div style={{width:"40%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"20px"}}>
-<StatusBox />
+    <section style={{height:"150vh", width:"100%"}}>
+<div style={{ width:"50%", height:"80%"}}>
+<AboutBox />
 
 </div>
     </section>
