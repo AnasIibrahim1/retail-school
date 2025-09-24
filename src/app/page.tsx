@@ -1,8 +1,9 @@
 import HomeBackCircle from "@/components/backCircles/HomeBackCircle/HomeBackCircle";
 import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
-import ContactCard from "@/components/cards/ContactCard/ContactCard";
-import './style.css';
+import Header from "@/components/Paragraphs/Header/HeaderPargraph";
 import StatusBox from "@/components/Boxes/StatusBox/StatusBox";
+import './style.css';
+import ContactCard from "@/components/cards/ContactCard/ContactCard";
 import AboutBox from "@/components/Boxes/AboutBox/AboutBox";
 
 export default function Home() {
@@ -30,11 +31,27 @@ export default function Home() {
     </section>
 
     {/* About Section */}
-    <section style={{height:"150vh", width:"100%"}}>
-<div style={{ width:"50%", height:"80%"}}>
-<AboutBox />
-
-</div>
+    <section className="about-section">
+      <div className="about-section-content-left">
+        <Header title="About Us" color="#4F5DE4" alignItems="center" justifyContent="center" style={{marginBottom:"20px"}} />
+        <h1 className="about-section-content-left-h1">
+        Creating a Lifelong Learning Best Community 
+        </h1>
+        <p className="about-section-content-left-p">
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum. Class aptent taciti sociosqu ad litora torquent 
+        </p>
+        <StatusBox />
+        <div style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"20px", marginTop:"40px"}}>
+        <ContactCard />
+        </div>
+        <hr />
+        <GeneralButton backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="/courses" style={{marginTop:"20px"}}>Discover More</GeneralButton>
+      </div>
+      <div className="about-section-content-right">
+        <div style={{width:"80%", height:"100%"}}>
+        <AboutBox />
+        </div>
+      </div>
     </section>
     </>
   );

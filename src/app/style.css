@@ -1,3 +1,4 @@
+/* 1- Landing Section */
 .landing-section{
     height:90vh;
     display:flex;
@@ -44,8 +45,54 @@
     position:relative;
 }
 
+/* 2- About Section */
+.about-section{
+    height:70vh;
+    margin-bottom:100px;
+    width:100%;
+    margin-top:100px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+.about-section-content-left{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+    align-items:start;
+    padding:0 50px;
+}
+.about-section-content-left-h1{
+    font-size:40px;
+    font-weight:bold;
+    color:#2A254D;
+    margin-bottom:20px;
+}
+.about-section-content-left-p{
+    font-size:16px;
+    margin-bottom:40px;
+    font-weight:400;
+    line-height:1.5;
+    color:#868686;
+}
 
 
+.about-section-content-right{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:start;
+}
+
+
+
+
+/* Media Queries */
 @media (max-width: 1000px) {
     .landing-section{
         height: auto !important;

@@ -8,7 +8,7 @@ export default function StatusBox() {
             </div>
             <div className="status-icon-right">
                 <h3>Presentation</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae odio asperiores officiis totam explicabo voluptas. Quod tempore quibusdam libero culpa, laborum obcaecati, numquam et saepe corrupti nesciunt ipsa ex reiciendis!</p>
+                <p style={{color:"#868686", fontWeight:"500"}}>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
             </div>
         </div>
     )
