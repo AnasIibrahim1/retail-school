@@ -4,8 +4,16 @@ export default function AboutBox() {
         <div className="about-box-container">
             <div className="box">
             </div>
-            <div style={{position:"absolute", top:"0", right:"0"}}>
+            <div className="square-shape" >
                 <img src="/shapes/square.svg" alt="" />
+            </div>
+            <div className="square-2-box">
+            </div>
+            <div className="dots">
+                <img src="/dots/linear-dots.svg" alt="" />
+            </div>
+            <div className="circle-shape">
+                <img src="/lines/line-shape.svg" alt="" />
             </div>
         </div>
     )
