@@ -2,6 +2,7 @@ import HomeBackCircle from "@/components/backCircles/HomeBackCircle/HomeBackCirc
 import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
 import ContactCard from "@/components/cards/ContactCard/ContactCard";
 import './style.css';
+import StatusBox from "@/components/Boxes/StatusBox/StatusBox";
 
 export default function Home() {
   return (
@@ -32,6 +33,10 @@ export default function Home() {
       <div className="about-section-content">
       <ContactCard />
       </div>
+<div style={{width:"40%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:"20px"}}>
+<StatusBox />
+
+</div>
     </section>
     </>
   );
