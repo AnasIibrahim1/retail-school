@@ -8,6 +8,7 @@ import ContactCard from "@/components/cards/ContactCard/ContactCard";
 import AboutBox from "@/components/Boxes/AboutBox/AboutBox";
 import ServiceBox from "@/components/Boxes/ServiceBox/ServiceBox";
 import FullTitle from "@/components/Paragraphs/FullTitle/FullTitle";
+import DiscoverBox from "@/components/Boxes/DiscoverBox/DiscoverBox";
 
 export default function Home() {
   return (
@@ -91,6 +92,10 @@ export default function Home() {
        </div>
       </div>
       <div className="discover-section-content-bottom">
+        <DiscoverBox styles={{borderRight:"1px dashed #fff"}} icon="/icons/edu.svg" num="100" type="+" text="Students" />
+        <DiscoverBox styles={{borderRight:"1px dashed #fff"}} icon="/icons/edu.svg" num="30.5" type="k" text="Distance" />
+        <DiscoverBox styles={{borderRight:"1px dashed #fff"}} icon="/icons/edu.svg" num="30" type="%" text="Percentage" />
+        <DiscoverBox styles={{}} icon="/icons/edu.svg" num="100" type="m" text="Views" />
       </div>
     </section>
 

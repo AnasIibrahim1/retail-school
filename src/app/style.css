@@ -158,7 +158,20 @@
     border-radius: 50%;
     position:relative;
 }
+.discover-section-content-bottom{
+    width: 75%;
+    height: auto;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    background-color: #4F5DE4;
+    border-radius: 0 0 20px 20px;
+    padding: 10px 0;
+    flex-wrap:wrap;
 
+}
 
 
 /* Media Queries */
