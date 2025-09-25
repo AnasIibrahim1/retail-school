@@ -109,6 +109,14 @@ export default function Home() {
     <PaginationBox data={FeedbacksData} style={{}}/>
     </section>
 
+    {/* Our Team Section */}
+    <section className="our-team-section">
+      <FullTitle title="Meet Our Professional Instructor" header="Our Team" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center" />
+      <img src="/backgrounds/random-bg.svg" alt="" style={{position:"absolute", top:0, left:0, zIndex:0, width:"100%", height:"50%"}} />
+      <div className="our-team-section-content">
+      </div>
+    </section>
+
     </>
   );
 }
