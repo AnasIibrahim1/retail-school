@@ -25,7 +25,7 @@ export default function Footer() {
 
           </div>
           <p className="footer-description">
-            نحن نقدم أفضل الخدمات التعليمية والتطويرية لمساعدتك في تحقيق أهدافك المهنية والشخصية. انضم إلينا في رحلة التعلم والتطوير.
+            We provide the best educational and development services to help you achieve your professional and personal goals. Join us on the journey of learning and development.
           </p>
           <div className="footer-social">
             <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -42,39 +42,39 @@ export default function Footer() {
 
         {/* Column 2: Quick Links */}
         <div className="footer-column">
-          <h3 className="footer-title">روابط سريعة</h3>
+          <h3 className="footer-title">Quick Links</h3>
           <ul className="footer-links">
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#services">الخدمات</a></li>
-            <li><a href="#courses">الدورات</a></li>
-            <li><a href="#contact">اتصل بنا</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
 
         {/* Column 3: Explore */}
         <div className="footer-column">
-          <h3 className="footer-title">استكشف</h3>
+          <h3 className="footer-title">Explore</h3>
           <ul className="footer-links">
-            <li><a href="/faq">الأسئلة الشائعة</a></li>
-            <li><a href="#web-design">تصميم المواقع</a></li>
-            <li><a href="#mobile-apps">تطبيقات الجوال</a></li>
-            <li><a href="#ui-ux">تصميم واجهات المستخدم</a></li>
-            <li><a href="#digital-marketing">التسويق الرقمي</a></li>
-            <li><a href="#data-science">علوم البيانات</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="#web-design">Web Design</a></li>
+            <li><a href="#mobile-apps">Mobile Apps</a></li>
+            <li><a href="#ui-ux">UI/UX Design</a></li>
+            <li><a href="#digital-marketing">Digital Marketing</a></li>
+            <li><a href="#data-science">Data Science</a></li>
           </ul>
         </div>
 
         {/* Column 4: Contact Us */}
         <div className="footer-column">
-          <h3 className="footer-title">تواصل معنا</h3>
+          <h3 className="footer-title">Contact Us</h3>
           <div className="footer-contact">
             <div className="contact-item">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>الرياض، المملكة العربية السعودية</span>
+              <span>Riyadh, Saudi Arabia</span>
             </div>
             
             <div className="contact-item">
@@ -97,14 +97,14 @@ export default function Footer() {
             <form onSubmit={handleSubscribe} className="subscribe-form">
               <input
                 type="email"
-                placeholder="أدخل بريدك الإلكتروني"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="subscribe-input"
                 required
               />
               <button type="submit" className="subscribe-btn">
-                اشترك
+                Subscribe
               </button>
             </form>
           </div>
@@ -114,14 +114,13 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className="footer-bottom" style={{zIndex:"3", position:"relative"}}>
         <div className="footer-container">
-          <p>&copy; 2024 جميع الحقوق محفوظة</p>
+          <p>&copy; 2024 All Rights Reserved</p>
           <div className="footer-bottom-links">
-            <a href="#privacy">سياسة الخصوصية</a>
-            <a href="#terms">شروط الاستخدام</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Use</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
-

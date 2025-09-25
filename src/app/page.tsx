@@ -1,3 +1,4 @@
+"use client"
 /* eslint-disable @next/next/no-img-element */
 import HomeBackCircle from "@/components/backCircles/HomeBackCircle/HomeBackCircle";
 import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
@@ -9,8 +10,11 @@ import AboutBox from "@/components/Boxes/AboutBox/AboutBox";
 import ServiceBox from "@/components/Boxes/ServiceBox/ServiceBox";
 import FullTitle from "@/components/Paragraphs/FullTitle/FullTitle";
 import DiscoverBox from "@/components/Boxes/DiscoverBox/DiscoverBox";
+import PaginationBox from "@/components/Boxes/PaginationBox/innerPaginationBox";
+import { FeedbacksData } from "@/data/data.js";
 
 export default function Home() {
+
   return (
     <>
     {/* Landing Section */}
@@ -97,6 +101,12 @@ export default function Home() {
         <DiscoverBox styles={{borderRight:"1px dashed #fff"}} icon="/icons/edu.svg" num="30" type="%" text="Percentage" />
         <DiscoverBox styles={{}} icon="/icons/edu.svg" num="100" type="m" text="Views" />
       </div>
+    </section>
+
+    {/* Feedback Section*/}
+    <section className="feedback-section">
+    <FullTitle title="What Our Students Feedback" header="Testimonial" alignItems="center" justifyContent="start" width="100%" cjustifyContent="start" calignItems="start" />
+    <PaginationBox data={FeedbacksData} style={{}}/>
     </section>
 
     </>
