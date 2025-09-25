@@ -56,6 +56,8 @@
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
+    overflow:hidden;
+
 }
 .about-section-content-left{
     width:50%;
@@ -98,6 +100,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow:hidden;
 }
 .our-services-section-content-upper{
     width:100%;
@@ -150,6 +153,7 @@
 }
 .top-right-video{
     position:relative;
+    z-index:1;
 }
 .top-right-video-img{
     background-color: #d4d4d41f;
@@ -196,12 +200,17 @@
 }
 .our-team-section-content{
     display:flex;
+    width:100%;
     flex-direction:row;
     align-items:center;
     justify-content:center;
     gap:80px;
     flex-wrap:wrap;
+    z-index:1;
 }
+
+
+/* Blog Section */
 
 
 

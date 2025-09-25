@@ -40,13 +40,6 @@ export default function InnerPaginationBox({ data = [], width = "800px", style }
     <div className="pagination-box-container2" style={{width: width, ...style}}>
       <div className="pagination-layout" key={`layout-${currentIndex}`}>
         <div className="avatar-square">
-          <Image 
-            src={currentItem.image || "/photo.jpg"} 
-            alt={currentItem.name}
-            width={180}
-            height={180}
-            className="user-image-square"
-          />
         </div>
         <div className="pagination-right" key={`content-${currentIndex}`}>
           <p className="opinion-text">{currentItem.text}</p>

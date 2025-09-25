@@ -94,8 +94,8 @@ export default function Home() {
             <img src="/icons/video-tri.svg" alt="" />
           </div>
         </div>
-       <div style={{position:"absolute", bottom:0, right:0, zIndex:0}}>
-       <img src="/lines/line-shape-2.svg" alt="" style={{position:"absolute", bottom:0, right:0}} />
+       <div style={{}}>
+       <img src="/lines/line-shape-2.svg" alt="" style={{position:"absolute", bottom:0, right:0, zIndex:0}} />
        </div>
       </div>
       <div className="discover-section-content-bottom">
@@ -115,7 +115,7 @@ export default function Home() {
     {/* Our Team Section */}
     <section className="our-team-section">
       <FullTitle title="Meet Our Professional Instructor" header="Our Team" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center" />
-      <img src="/backgrounds/random-bg.svg" alt="" style={{position:"absolute", top:0, left:0, right:0, zIndex:0, width:"100%", height:"50%"}} />
+      <img src="/backgrounds/random-bg.svg" alt="" style={{position:"absolute", top:0, left:0, right:0, zIndex:-2, width:"100%", height:"50%"}} />
       <div className="our-team-section-content">
       <TeamCard name="John Doe" job="Software Engineer" image="/test/photo.jpg" socials={[
         {
@@ -161,6 +161,8 @@ export default function Home() {
       ]} onAction={()=>{}} />
       </div>
     </section>
+
+    {/* Blog Section */}
 
     </>
   );

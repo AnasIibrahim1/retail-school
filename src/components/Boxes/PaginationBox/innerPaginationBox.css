@@ -4,6 +4,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: relative;
   min-height: 300px;
+  width: 70% !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,6 +30,10 @@
   border: 4px solid #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   flex: 0 0 auto;
+  background-image: url('/test/photo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .user-image-square {
