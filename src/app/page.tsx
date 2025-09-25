@@ -179,6 +179,24 @@ export default function Home() {
       </div>
     </section>
 
+    {/* Discover Section */}
+    <section className="skills-section">
+      <div className="skills-section-content">
+        <div className="skills-left-content">
+          <img src="/text/Get your Quality.svg" alt="" />
+          <h1 style={{color:"#fff", maxWidth:"370px", fontSize:"40px", fontWeight:"bold"}}> <span style={{fontWeight:"normal"}}>Skills certificate </span>
+          from the <span style={{color:"#F57005"}}>eduAct</span></h1>
+        </div>
+      </div>
+      <div className="skills-section-content-right">
+        <div className="skills-section-content-right-button">
+          <GeneralButton backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="/courses" style={{marginTop:"20px"}}>Get in Touch</GeneralButton>
+        </div>
+      </div>
+
+    </section>
+    
+
     </>
   );
 }
