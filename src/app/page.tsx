@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import HomeBackCircle from "@/components/backCircles/HomeBackCircle/HomeBackCircle";
 import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
 import Header from "@/components/Paragraphs/Header/HeaderPargraph";
@@ -5,6 +6,8 @@ import StatusBox from "@/components/Boxes/StatusBox/StatusBox";
 import './style.css';
 import ContactCard from "@/components/cards/ContactCard/ContactCard";
 import AboutBox from "@/components/Boxes/AboutBox/AboutBox";
+import ServiceBox from "@/components/Boxes/ServiceBox/ServiceBox";
+import FullTitle from "@/components/Paragraphs/FullTitle/FullTitle";
 
 export default function Home() {
   return (
@@ -53,6 +56,44 @@ export default function Home() {
         </div>
       </div>
     </section>
+
+    {/* Our Services Section */}
+    <section className="our-services-section">
+      <div className="our-services-section-content-upper">
+      <FullTitle title="Creating a Lifelong Learning Best Community " header="Our Services" alignItems="center" justifyContent="start" width="100%" cjustifyContent="start" calignItems="start" />
+      <p className="our-services-section-p">
+      There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable. 
+      </p>
+      </div>
+      <div className="our-services-section-content-lower">
+    <ServiceBox src="/icons/edu.svg" title="Exclusive Coach" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
+    <ServiceBox src="/icons/lamp.svg" title="Creative Minds" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
+    <ServiceBox src="/icons/video.svg" title="Video Tutorials" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
+    <ServiceBox src="/icons/neuon.svg" title="Worlds Record" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
+
+    </div>
+    </section>
+
+    {/* Discover Section */}
+    <section className="discover-section">
+      <div className="discover-section-content-top">
+        <div className="top-left-content">
+          <h1 style={{color:"#fff", maxWidth:"500px"}}>Discover the campus through a video tour </h1>
+          <GeneralButton backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="/courses" style={{marginTop:"20px"}}>Discover More</GeneralButton>
+        </div>
+        <div className="top-right-video">
+          <div className="top-right-video-img">
+            <img src="/icons/video-tri.svg" alt="" />
+          </div>
+        </div>
+       <div style={{position:"absolute", bottom:0, right:0, zIndex:0}}>
+       <img src="/lines/line-shape-2.svg" alt="" style={{position:"absolute", bottom:0, right:0}} />
+       </div>
+      </div>
+      <div className="discover-section-content-bottom">
+      </div>
+    </section>
+
     </>
   );
 }

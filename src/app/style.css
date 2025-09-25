@@ -47,7 +47,7 @@
 
 /* 2- About Section */
 .about-section{
-    height:70vh;
+    min-height:70vh;
     margin-bottom:100px;
     width:100%;
     margin-top:100px;
@@ -78,8 +78,6 @@
     line-height:1.5;
     color:#868686;
 }
-
-
 .about-section-content-right{
     width:50%;
     height:100%;
@@ -89,6 +87,77 @@
     align-items:start;
 }
 
+/* Our Services Section */
+.our-services-section{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    padding:0 50px;
+    background-image: url('/backgrounds/edu-pg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.our-services-section-content-upper{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:30px;
+}
+.our-services-section-p{
+    font-size:20px;
+    font-weight:bold;
+    color:#2A254D;
+    max-width:600px;
+    border-top:2px solid #F57005;
+    padding-top:20px;
+}
+.our-services-section-content-lower{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+/* Discover Section*/
+.discover-section{
+    height: 70vh;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.discover-section-content-top{
+    width: 100%;
+    height: 50%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-around;
+    background-color: #36305d;
+    position:relative;
+    overflow:hidden;
+}
+.top-right-video{
+    position:relative;
+}
+.top-right-video-img{
+    background-color: #d4d4d41f;
+    width: 100%;
+    height: 100%;
+    padding: 80px;
+    border-radius: 50%;
+    position:relative;
+}
 
 
 
