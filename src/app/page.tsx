@@ -12,6 +12,7 @@ import FullTitle from "@/components/Paragraphs/FullTitle/FullTitle";
 import DiscoverBox from "@/components/Boxes/DiscoverBox/DiscoverBox";
 import PaginationBox from "@/components/Boxes/PaginationBox/innerPaginationBox";
 import TeamCard from "@/components/cards/TeamCard/TeamCard";
+import PopularCards from "@/components/cards/PopularCards/PopularCards"
 
 
 import { FeedbacksData } from "@/data/data.js";
@@ -162,7 +163,21 @@ export default function Home() {
       </div>
     </section>
 
+<hr style={{width:"100%", margin:"100px 0"}} />
     {/* Blog Section */}
+    <section className="blog-section">
+      <FullTitle title="Latest Updates & Articles" header="Latest Blog" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center" />
+      <div style={{position:"absolute", bottom:0, left:0, right:0, zIndex:-1, height:"60%", backgroundColor:"#F6F6F6"}}>
+        <img src="/backgrounds/horizontal.svg" alt="" style={{width:"100%", height:"100%"}}/>
+      </div>
+      <div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center", gap:"80px", flexWrap:"wrap", marginTop:"120px"}}>
+      <PopularCards title="Course Title" image="/test/photo.jpg" price={100} />
+      <PopularCards title="Course Title" image="/test/photo.jpg" price={100} />
+      <PopularCards title="Course Title" image="/test/photo.jpg" price={100} />
+      <PopularCards title="Course Title" image="/test/photo.jpg" price={100} />
+
+      </div>
+    </section>
 
     </>
   );

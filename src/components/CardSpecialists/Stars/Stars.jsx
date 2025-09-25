@@ -32,7 +32,7 @@ export default function Stars({ rating = 5, reviews, size = 'medium' }) {
       </div>
       {reviews && (
         <span className="reviews-text">
-          ({reviews} تقيمات)
+          ({reviews} Reviews)
         </span>
       )}
     </div>

@@ -3,13 +3,13 @@ import ProfileCircles from "@/components/Circles/ProfileCicles/ProfileCircles";
 import DateDisplay from "@/components/CardSpecialists/Date/Date";
 import SalaryLessons from "@/components/CardSpecialists/SalaryLessons/SalaryLessons";
 import "./style.css";
-export default function BusinessCard({type, actionButton = {}, href = "", salary = 100, lessons = 24, profileImage = "/test/photo.jpg", name = "انس ابراهيم حلمي", role = "مبرمج تطبيقات"}) {
+export default function BusinessCard({type, actionButton = {}, href = "", salary = 100, lessons = 24, profileImage = "/test/photo.jpg", name = "Anas ibrahim helmy", role = "Software Engineer"}) {
   return (
 <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
         <ProfileCircles image={profileImage} backgroundColor="#E4E4E4" width="60px" height="40px" />
-      <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", width: "100%", height: "100%", marginRight: "10px"}}>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", width: "100%", height: "100%", marginLeft: "10px"}}>
         {name && <h3 style={{color: "#000", fontSize: "16px", fontWeight: "bold"}}>{name}</h3>}
         {role && <p style={{color: "gray", fontSize: "12px", fontWeight: "bold"}}>{role}</p>}
       </div>
