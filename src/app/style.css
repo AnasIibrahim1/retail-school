@@ -194,6 +194,14 @@
     margin-top:100px;
     padding: 100px 0
 }
+.our-team-section-content{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+}
 
 
 
