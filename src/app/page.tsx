@@ -45,10 +45,7 @@ export default function Home() {
     {/* About Section */}
     <section className="about-section">
       <div className="about-section-content-left">
-        <Header title="About Us" color="#4F5DE4" alignItems="center" justifyContent="center" style={{marginBottom:"20px"}} />
-        <h1 className="about-section-content-left-h1">
-        Creating a Lifelong Learning Best Community 
-        </h1>
+        <FullTitle title="Creating a Lifelong Learning Best Community " header="About Us" alignItems="center" justifyContent="start" width="100%" cjustifyContent="start" calignItems="start" />
         <p className="about-section-content-left-p">
         There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum. Class aptent taciti sociosqu ad litora torquent 
         </p>
@@ -60,7 +57,7 @@ export default function Home() {
         <GeneralButton backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="/courses" style={{marginTop:"20px"}}>Discover More</GeneralButton>
       </div>
       <div className="about-section-content-right">
-        <div style={{width:"80%", height:"100%"}}>
+        <div className="about-section-content-right-box" style={{width:"80%", height:"100%"}}>
         <AboutBox />
         </div>
       </div>
@@ -75,7 +72,7 @@ export default function Home() {
       </p>
       </div>
       <div className="our-services-section-content-lower">
-    <ServiceBox src="/icons/edu.svg" title="Exclusive Coach" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
+      <ServiceBox src="/icons/lamp.svg" title="Creative Minds" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
     <ServiceBox src="/icons/lamp.svg" title="Creative Minds" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
     <ServiceBox src="/icons/video.svg" title="Video Tutorials" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
     <ServiceBox src="/icons/neuon.svg" title="Worlds Record" description="The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc." />
@@ -88,7 +85,9 @@ export default function Home() {
       <div className="discover-section-content-top">
         <div className="top-left-content">
           <h1 style={{color:"#fff", maxWidth:"500px"}}>Discover the campus through a video tour </h1>
+          <div className="top-left-content-button">
           <GeneralButton backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="/courses" style={{marginTop:"20px"}}>Discover More</GeneralButton>
+          </div>
         </div>
         <div className="top-right-video">
           <div className="top-right-video-img">
@@ -96,7 +95,7 @@ export default function Home() {
           </div>
         </div>
        <div style={{}}>
-       <img src="/lines/line-shape-2.svg" alt="" style={{position:"absolute", bottom:0, right:0, zIndex:0}} />
+       <img className="line-shape-2" src="/lines/line-shape-2.svg" alt="" style={{position:"absolute", bottom:0, right:0, zIndex:0}} />
        </div>
       </div>
       <div className="discover-section-content-bottom">
@@ -109,13 +108,13 @@ export default function Home() {
 
     {/* Feedback Section*/}
     <section className="feedback-section">
-    <FullTitle title="What Our Students Feedback" header="Testimonial" alignItems="center" justifyContent="start" width="100%" cjustifyContent="start" calignItems="start" />
+    <FullTitle title="What Our Students Feedback" header="Testimonial" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center" textAlign="center" />
     <PaginationBox data={FeedbacksData} style={{}}/>
     </section>
 
     {/* Our Team Section */}
     <section className="our-team-section">
-      <FullTitle title="Meet Our Professional Instructor" header="Our Team" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center" />
+      <FullTitle title="Meet Our Professional Instructor" header="Our Team" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center" textAlign="center" />
       <img src="/backgrounds/random-bg.svg" alt="" style={{position:"absolute", top:0, left:0, right:0, zIndex:-2, width:"100%", height:"50%"}} />
       <div className="our-team-section-content">
       <TeamCard name="John Doe" job="Software Engineer" image="/test/photo.jpg" socials={[
@@ -166,7 +165,7 @@ export default function Home() {
 <hr style={{width:"100%", margin:"100px 0"}} />
     {/* Blog Section */}
     <section className="blog-section">
-      <FullTitle title="Latest Updates & Articles" header="Latest Blog" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center" />
+      <FullTitle title="Latest Updates & Articles" header="Latest Blog" alignItems="center" justifyContent="center" width="100%" cjustifyContent="center" calignItems="center"    />
       <div style={{position:"absolute", bottom:0, left:0, right:0, zIndex:-1, height:"60%", backgroundColor:"#F6F6F6"}}>
         <img src="/backgrounds/horizontal.svg" alt="" style={{width:"100%", height:"100%"}}/>
       </div>
@@ -183,9 +182,9 @@ export default function Home() {
     <section className="skills-section">
       <div className="skills-section-content">
         <div className="skills-left-content">
-          <img src="/text/Get your Quality.svg" alt="" />
-          <h1 style={{color:"#fff", maxWidth:"370px", fontSize:"40px", fontWeight:"bold"}}> <span style={{fontWeight:"normal"}}>Skills certificate </span>
-          from the <span style={{color:"#F57005"}}>eduAct</span></h1>
+          <img className="skills-left-content-img" src="/text/Get your Quality.svg" alt="" />
+          <h1 style={{color:"#fff", maxWidth:"370px", fontSize:"40px", fontWeight:"bold"}}> Skills certificate 
+          from the <div style={{color:"#F57005", display:"inline-block"}}>eduAct</div></h1>
         </div>
       </div>
       <div className="skills-section-content-right">

@@ -9,6 +9,7 @@
     justify-content : space-around;
     background-color:#F6F6F6;
     gap : 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 .status-icon-left{
     z-index:1;
@@ -28,4 +29,13 @@
     align-items:start;
     justify-content:center;
     gap:10px;
+}
+
+@media (max-width: 600px) {
+    .status-box-left{
+        width:100% !important;
+        height:10% !important;
+        border-radius:10px 10px 0 0 !important;
+    }
+    
 }

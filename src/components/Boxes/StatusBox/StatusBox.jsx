@@ -2,7 +2,7 @@ import "./style.css";
 export default function StatusBox() {
     return (
         <div className="status-box-container">
-            <div style={{width:"10%", height:"100%", backgroundColor:"#4F5DE4", borderRadius:"10px 0 0 10px", position:"absolute", left:"0", top:"0", bottom:"0", zIndex:"0"}}></div>
+            <div className="status-box-left" style={{width:"10%", height:"100%", backgroundColor:"#4F5DE4", borderRadius:"10px 0 0 10px", position:"absolute", left:"0", top:"0", bottom:"0", zIndex:"0"}}></div>
             <div className="status-icon-left">
 <img src="/icons/Presentation.svg" alt="" />
             </div>

@@ -23,7 +23,7 @@
 
 @media (max-width: 768px) {
   .header-paragraph h1 {
-    font-size: 18px;
+    font-size: 20px;
   }
   
   .header-paragraph {
@@ -38,12 +38,5 @@
   
   .header-paragraph {
     gap: 6px;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 360px) {
-  .header-paragraph h1 {
-    font-size: 14px;
   }
 }
