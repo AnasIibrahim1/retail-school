@@ -4,6 +4,7 @@
     box-sizing:border-box;
     font-family: 'Urbanist', sans-serif;
 }
+
 /* 1- Landing Section */
 .landing-section{
     height:90vh;
@@ -215,7 +216,6 @@
     z-index:1;
 }
 
-
 /* Blog Section */
 .blog-section{
     padding:50px 50px;
@@ -223,7 +223,6 @@
     overflow:hidden;
     min-height:100vh;
 }
-
 
 /* Skills Section */
 .skills-section{
