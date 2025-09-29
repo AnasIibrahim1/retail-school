@@ -5,6 +5,7 @@ import '@fontsource/jost/500.css';
 import '@fontsource/jost/600.css';
 import '@fontsource/jost/700.css';
 
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" dir="ltr">
