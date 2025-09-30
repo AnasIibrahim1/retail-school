@@ -21,13 +21,13 @@ export default function Home() {
   things in different ways.</p>
   <GradiantButton href="/courses" ariaLabel="Courses" text="View Courses" padding="20px 30px" /> 
 </div>
-<div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative'}}>
+<div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative',minWidth: '600px'}}>
   <div className="circles"></div>
 <Circle/>
   </div>
 
 
-<div style={{position: 'absolute', top: 0, right:"-50%" , zIndex: 4, width: '100%', height: '50%', overflow: 'hidden', transform: 'rotate(220deg)'}}>
+<div className="wave">
   <Wave/>
 </div>
 
