@@ -27,7 +27,7 @@ export default function Header() {
   return (
       <motion.header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', minHeight: '80px', position: 'fixed', zIndex: 1000, padding: '0 100px'}}>
 
-        <motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
+        <motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '50px'}}>
           <motion.h1 style={{margin: 0}}>Retail</motion.h1>
 
           <div style={{ position: 'relative', display: 'inline-block' }}>
@@ -119,7 +119,7 @@ export default function Header() {
         </motion.div>
 
         <motion.div>
-          <motion.ul className="nav-links" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
+          <motion.ul className="nav-links" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '50px'}}>
         <MotionConfig transition={{duration: 0.3, ease: 'easeInOut'}} whileTap={{scale: 1}}>
         <motion.li><Link href="/">Home</Link></motion.li>
             <motion.li><Link href="#">About</Link></motion.li>

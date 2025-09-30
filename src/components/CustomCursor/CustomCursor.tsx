@@ -42,7 +42,7 @@ export default function CustomCursor() {
 
         let rafId = 0;
         const stiffness = 0.18; // follow speed
-        const friction = 0.8;  // damping
+        const friction = 0;  // damping
         let vx = 0, vy = 0;
 
         const loop = () => {
