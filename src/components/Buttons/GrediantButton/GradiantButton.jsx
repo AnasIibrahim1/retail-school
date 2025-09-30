@@ -18,7 +18,9 @@ export default function GradiantButton( {href, ariaLabel, text} ) {
                     padding: '10px 20px',
                     color: '#FFFFFF',
                     cursor: 'pointer',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.06)'
+                    boxShadow: '0 2px 6px rgba(0,0,0,0.06)',
+                    fontSize: '0.875rem',
+                    fontWeight: '600'
                   }}
                   whileTap={{ scale: 0.98 }}
                   whileHover={{ y: -1 }}

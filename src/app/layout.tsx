@@ -13,10 +13,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body style={{ 
         fontFamily: 'Jost, sans-serif', 
         margin: 0, 
-        padding: '0 100px', 
         boxSizing: 'border-box',
         overflowX: 'hidden',
-        minHeight: '150vh'
       }}>
 <Header/>
         {children}

@@ -25,7 +25,7 @@ export default function Header() {
   ]
 
   return (
-      <motion.header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', minHeight: '80px', position: 'sticky', top: "10px", zIndex: 1000}}>
+      <motion.header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', minHeight: '80px', position: 'fixed', zIndex: 1000, padding: '0 100px'}}>
 
         <motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
           <motion.h1 style={{margin: 0}}>Retail</motion.h1>
