@@ -22,7 +22,11 @@ export default function Home() {
   <GradiantButton href="/courses" ariaLabel="Courses" text="View Courses" padding="20px 30px" /> 
 </div>
 <div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative',minWidth: '600px'}}>
-  <div className="circles"></div>
+  <div className="circle-1 circu">
+  </div>
+  <div className="circle-2 circu"></div>
+  <div className="circle-3 circu"></div>
+  <div className="circle-4 circu"></div>
 <Circle/>
   </div>
 

@@ -38,6 +38,49 @@ section{
   margin-top: 20px;
 }
 
+.circu{
+  position: absolute;
+  width:40px;
+  height: 40px;
+  background: linear-gradient(180deg, #FF2574 0%, #FFA35A 100%);
+  border-radius: 50%;
+  z-index: 100;
+  animation: floatY 6s ease-in-out infinite;
+  will-change: transform;
+}
+.circle-1{
+  top: 70%;
+  left: 30%;
+  animation-duration: 5.5s;
+  animation-delay: 0s;
+}
+.circle-2{
+  top: 60%;
+  left: 70%;
+  animation-duration: 7s;
+  animation-delay: .5s;
+}
+.circle-3{
+  top: 30%;
+  left: 70%;
+  animation-duration: 6.5s;
+  animation-delay: .2s;
+}
+.circle-4{
+  top: 20%;
+  left: 20%;
+  animation-duration: 8s;
+  animation-delay: .8s;
+}
+
+
+@keyframes floatY{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-12px); }
+  100%{ transform: translateY(0); }
+}
+
+
 .wave{
   position: absolute;
   top: 0;
@@ -49,6 +92,13 @@ section{
   transform: rotate(220deg);
   min-width: 600px;
 }
+
+
+
+
+
+
+
 
 @media (max-width: 1800px) {
   .wave{
@@ -62,14 +112,23 @@ section{
 }
 @media (max-width: 1200px) {
   .wave{  
-     right: -80%;
+     right: -40%;
+     top: -40%;
 } }
 @media (max-width: 1024px) {
   .wave{
-    right: 0;
-    top: 0;
-    transform: rotate(0);
-    height: 100%;
-    width: 100%;
+    right: -50%;
+    top: -30%;
+  }
+}
+@media (max-width: 900px) {
+  .wave{
+    right: -45%;
+    top: -35%;
+  }
+}
+@media (max-width: 850px) {
+  .wave{
+    display: none;
   }
 }

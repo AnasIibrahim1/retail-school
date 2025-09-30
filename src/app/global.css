@@ -39,8 +39,19 @@
 .hover-word__text {
   position: relative;
   z-index: 1;
+  transition: transform 220ms ease;
 }
 .hover-word:hover .hover-word__bg {
   opacity: 0.15;
   transform: translateY(-50%) scaleY(1);
+  animation: hoverWordBgY 1200ms ease-in-out infinite;
+}
+.hover-word:hover .hover-word__text {
+  transform: translateY(-2px);
+}
+
+@keyframes hoverWordBgY {
+  0%   { transform: translateY(-50%) scaleY(1); }
+  50%  { transform: translateY(-46%) scaleY(1); }
+  100% { transform: translateY(-50%) scaleY(1); }
 }
