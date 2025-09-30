@@ -11,4 +11,29 @@ section{
   align-items: center;
   flex-direction: row;
   gap: 10px;
+  position: relative;
+}
+.landing-page-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+.landing-page-content h1{
+  font-size: calc(2rem + 2vw);
+  font-weight: 700;
+  color: #2A254D;
+  margin: 0;
+}
+.landing-page-content p{
+  font-size: calc(0.8rem + 0.5vw);
+  font-weight: 400;
+  color: #77838F;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  max-width: calc(450px + 10vw);
+}
+.landing-page-content button{
+  margin-top: 20px;
 }

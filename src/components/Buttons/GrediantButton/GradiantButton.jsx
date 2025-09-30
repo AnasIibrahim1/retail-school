@@ -1,8 +1,9 @@
+"use client"
 import { motion } from "motion/react"
 import Link from "next/link"
 import './style.css'
 
-export default function GradiantButton( {href, ariaLabel, text} ) {
+export default function GradiantButton( {href, ariaLabel, text, padding="10px 20px"} ) {
     return (
         <motion.div>
               <Link href={href} aria-label={ariaLabel}>
@@ -15,7 +16,7 @@ export default function GradiantButton( {href, ariaLabel, text} ) {
                     borderRadius: '999px',
                     border: 'none',
                     outline: 'none',
-                    padding: '10px 20px',
+                    padding: padding,
                     color: '#FFFFFF',
                     cursor: 'pointer',
                     boxShadow: '0 2px 6px rgba(0,0,0,0.06)',

@@ -4,3 +4,43 @@
     box-sizing: border-box;
     font-family: 'Urbanist', sans-serif;
 }
+
+/* Hide native cursor only on fine pointers (e.g., mouse) */
+@media (pointer: fine) {
+  html, body {
+    cursor: none;
+  }
+  [data-cursor="text"] {
+    cursor: none;
+  }
+}
+
+/* HoverWords styles */
+.hover-word {
+  position: relative;
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 6px;
+}
+.hover-word__bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55%;
+  height: 55%;
+  transform: translateY(-50%) scaleY(0.2);
+  transform-origin: 50% 50%;
+  background: linear-gradient(90deg, #FF2574 0%, #FFA35A 100%);
+  opacity: 0;
+  border-radius: 6px;
+  transition: opacity 180ms ease, transform 220ms ease;
+  z-index: -1;
+}
+.hover-word__text {
+  position: relative;
+  z-index: 1;
+}
+.hover-word:hover .hover-word__bg {
+  opacity: 0.15;
+  transform: translateY(-50%) scaleY(1);
+}
