@@ -4,7 +4,7 @@ import '@fontsource/jost/400.css';
 import '@fontsource/jost/500.css';
 import '@fontsource/jost/600.css';
 import '@fontsource/jost/700.css';
-
+import Header from '@/components/Header/Header';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
@@ -13,10 +13,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body style={{ 
         fontFamily: 'Jost, sans-serif', 
         margin: 0, 
-        padding: 0, 
+        padding: '0 100px', 
         boxSizing: 'border-box',
         overflowX: 'hidden'
       }}>
+<Header/>
         {children}
       </body>
     </html>

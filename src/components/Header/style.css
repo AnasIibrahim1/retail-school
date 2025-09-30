@@ -1,0 +1,31 @@
+.courses-btn{
+        background: linear-gradient(90deg, #FFA35A, #FF2574);
+        background-size: 200% 200%;
+        animation: gradientShift 3s linear infinite alternate;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links li a, .blog-btn{
+    text-decoration: none;
+    color: #77838F;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+    color: #2A254D;
+}
