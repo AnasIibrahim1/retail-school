@@ -15,7 +15,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         margin: 0, 
         padding: '0 100px', 
         boxSizing: 'border-box',
-        overflowX: 'hidden'
+        overflowX: 'hidden',
+        minHeight: '150vh'
       }}>
 <Header/>
         {children}

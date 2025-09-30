@@ -2,6 +2,7 @@
 import { motion, MotionConfig } from "motion/react"
 import { useState } from "react"
 import Link from "next/link"
+import GradiantButton from "../Buttons/GrediantButton/GradiantButton"
 import './style.css'
 
 export default function Header() {
@@ -24,8 +25,7 @@ export default function Header() {
   ]
 
   return (
-    <div>
-      <motion.header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', minHeight: '80px'}}>
+      <motion.header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', minHeight: '80px', position: 'sticky', top: "10px", zIndex: 1000}}>
 
         <motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
           <motion.h1 style={{margin: 0}}>Retail</motion.h1>
@@ -120,7 +120,7 @@ export default function Header() {
 
         <motion.div>
           <motion.ul className="nav-links" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
-        <MotionConfig transition={{duration: 0.3, ease: 'easeInOut'}} whileHover={{scale: 1.05}} whileTap={{scale: 1}}>
+        <MotionConfig transition={{duration: 0.3, ease: 'easeInOut'}} whileTap={{scale: 1}}>
         <motion.li><Link href="/">Home</Link></motion.li>
             <motion.li><Link href="#">About</Link></motion.li>
             <motion.li style={{ position: 'relative' }}>
@@ -202,6 +202,7 @@ export default function Header() {
         </motion.div>
 
         <motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
+            {/* Search input */}
           <motion.div
             style={{
               display: 'flex',
@@ -210,12 +211,20 @@ export default function Header() {
               minWidth: '40px'
             }}
           >
-            {isSearchOpen && (
+            <motion.div
+              initial={false}
+              animate={{ width: isSearchOpen ? '240px' : '40px' }}
+              style={{ overflow: 'hidden' }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 25
+              }}
+            >
               <motion.input
-                initial={{ width: 0, opacity: 0 }}
-                animate={{ width: '240px', opacity: 1 }}
-                exit={{ width: 0, opacity: 0 }}
-                transition={{ type: 'keyframes', stiffness: 100, duration: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isSearchOpen ? 1 : 0 }}
+                transition={{ duration: 0.2 }}
                 placeholder="Search..."
                 style={{
                   padding: '10px 16px',
@@ -235,7 +244,7 @@ export default function Header() {
                   boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
                 }}
               />
-            )}
+            </motion.div>
             <motion.button
               initial={false}
               animate={{
@@ -275,60 +284,13 @@ export default function Header() {
               </svg>
             </motion.button>
           </motion.div>
-          <motion.div>
-              <Link href="/login">
-                <motion.button
-                  className="courses-btn"
-                  aria-label="Login"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    borderRadius: '999px',
-                    border: 'none',
-                    outline: 'none',
-                    padding: '10px 20px',
-                    color: '#FFFFFF',
-                    cursor: 'pointer',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.06)'
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  whileHover={{ y: -1 }}
-                  animate={{backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']}}
-                  transition={{duration: 3, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut'}}
-                >
-                  Login
-                </motion.button>
-              </Link>
-            </motion.div>
-          <motion.div>
-              <Link href="/register">
-                <motion.button
-                  className="courses-btn"
-                  aria-label="Register"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    borderRadius: '999px',
-                    border: 'none',
-                    outline: 'none',
-                    padding: '10px 20px',
-                    color: '#FFFFFF',
-                    cursor: 'pointer',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.06)'
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  whileHover={{ y: -1 }}
-                  animate={{backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']}}
-                  transition={{duration: 3, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut'}}
-                >
-                  Register
-                </motion.button>
-              </Link>
-            </motion.div>
+
+          {/* Login and Register buttons */}
+<motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
+<GradiantButton href="/login" ariaLabel="Login" text="Login" />
+<GradiantButton href="/register" ariaLabel="Register" text="Register" />
+</motion.div>
         </motion.div>
       </motion.header>
-    </div>
   );
 } 
