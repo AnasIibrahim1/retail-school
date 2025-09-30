@@ -5,7 +5,8 @@ import Wave from '@/components/AnimationShapes/Wave/Wave';
 import Circle from '@/components/AnimationShapes/Circle/Circle';
 import HoverWords from '@/components/HoverWords/HoverWords';
 import FeaturedTabs from '@/components/FeaturedTabs/FeaturedTabs';
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import FeaturedCourse from '@/components/Cards/FeatureCourse/FeaturedCourse';
 
 import './style.css';
 
@@ -13,7 +14,15 @@ export default function Home() {
   const [selectedTab, setSelectedTab] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const PAGE_SIZE = 5;
+  const [containerWidth, setContainerWidth] = useState<number>(0);
+  const gridRef = React.useRef<HTMLDivElement | null>(null);
+  const CARD_WIDTH = 320;
+  const GAP = 12;
+  const PAGE_SIZE = useMemo(() => {
+    if (!containerWidth) return 3;
+    const fit = Math.max(1, Math.floor((containerWidth + GAP) / (CARD_WIDTH + GAP)));
+    return fit;
+  }, [containerWidth]);
 
   const itemsByTab = useMemo(() => {
     const make = (prefix: string) => Array.from({ length: 15 }, (_, i) => `${prefix} ${i + 1}`);
@@ -29,6 +38,18 @@ export default function Home() {
   const allItems = itemsByTab[selectedTab] ?? [];
   const pageCount = Math.max(1, Math.ceil(allItems.length / PAGE_SIZE));
   const pagedItems = allItems.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+  React.useEffect(() => {
+    if (!gridRef.current) return;
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const cr = entry.contentRect;
+        setContainerWidth(cr.width);
+      }
+    });
+    ro.observe(gridRef.current);
+    return () => ro.disconnect();
+  }, []);
 
   const handleTabChange = (key: string) => {
     setSelectedTab(key);
@@ -100,9 +121,9 @@ export default function Home() {
           <path d="M8 6L4 10L8 14"/>
         </svg>
       </button>
-      <div className='featured-grid'>
+      <div className='featured-grid' ref={gridRef}>
       {pagedItems.map((txt) => (
-        <div className='featured-card' key={txt}>{txt}</div>
+        <FeaturedCourse key={txt} />
       ))}
       </div>
       <button
