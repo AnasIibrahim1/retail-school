@@ -102,7 +102,11 @@
         grid-template-columns: 36px 1fr 36px;
     }
 }
-
+@media (max-width: 750px) {
+    .instructors-grid {
+        justify-content: center;
+    }
+}
 @media (max-width: 600px) {
     .instructors-grid {
         overflow-x: auto;

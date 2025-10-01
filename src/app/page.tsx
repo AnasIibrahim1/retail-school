@@ -12,6 +12,7 @@ import CategoriesSection from '@/components/CategoriesSection/CategoriesSection'
 import EventsSection from '@/components/EventsSection/EventsSection';
 import NewsSection from '@/components/NewsSection/NewsSection';
 import InstructorsSection from '@/components/InstructorsSection/InstructorsSection';
+import SubscribeSection from '@/components/SubscribeSection/SubscribeSection';
 import { categories } from '@/data/categories';
 import { upcomingEvents } from '@/data/events';
 import { latestNews } from '@/data/news';
@@ -208,6 +209,11 @@ export default function Home() {
     <p>Meet our expert instructors who are passionate about teaching and learning.</p>
   </div>
   <InstructorsSection instructors={topInstructors} />
+</section>
+
+{/* Subscribe Ad */}
+<section className='subscribe-ad bm'>
+  <SubscribeSection />
 </section>
 </>
   );
