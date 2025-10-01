@@ -1,6 +1,6 @@
 "use client"
 import { motion, MotionConfig } from "motion/react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import GradiantButton from "../Buttons/GrediantButton/GradiantButton"
 import './style.css'
@@ -9,6 +9,21 @@ export default function Header() {
   const [coursesOpen, setCoursesOpen] = useState(false)
   const [blogOpen, setBlogOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const courses = [
     { id: 1, title: "Business Strategy" },
@@ -25,9 +40,17 @@ export default function Header() {
   ]
 
   return (
-      <motion.header style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', minHeight: '80px', position: 'fixed', zIndex: 1000, padding: '0 100px'}}>
-
-        <motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '50px'}}>
+      <motion.header 
+        initial={false}
+        animate={{
+          backgroundColor: isScrolled ? '#FFFFFF' : 'transparent',
+          boxShadow: isScrolled ? '0 2px 12px rgba(0,0,0,0.08)' : '0 0 0 rgba(0,0,0,0)'
+        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        style={{position: 'fixed', width: '100%', zIndex: 1000}}
+      >
+        <div className="header-container">
+        <motion.div className="header-left">
           <motion.h1 style={{margin: 0}}>Retail</motion.h1>
 
           <div style={{ position: 'relative', display: 'inline-block' }}>
@@ -118,8 +141,8 @@ export default function Header() {
           </div>
         </motion.div>
 
-        <motion.div>
-          <motion.ul className="nav-links" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '50px'}}>
+        <motion.div className="header-center">
+          <motion.ul className="nav-links">
         <MotionConfig transition={{duration: 0.3, ease: 'easeInOut'}} whileTap={{scale: 1}}>
         <motion.li><Link href="/">Home</Link></motion.li>
             <motion.li><Link href="#">About</Link></motion.li>
@@ -201,9 +224,10 @@ export default function Header() {
           </motion.ul>
         </motion.div>
 
-        <motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
+        <motion.div className="header-right">
             {/* Search input */}
           <motion.div
+            className="search-container"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -286,11 +310,129 @@ export default function Header() {
           </motion.div>
 
           {/* Login and Register buttons */}
-<motion.div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
+<motion.div className="auth-buttons" style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px'}}>
 <GradiantButton href="/login" ariaLabel="Login" text="Login" />
 <GradiantButton href="/register" ariaLabel="Register" text="Register" />
 </motion.div>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            className="mobile-menu-btn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+            whileTap={{ scale: 0.95 }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {mobileMenuOpen ? (
+                <>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                  <line x1="6" y1="18" x2="18" y2="6"></line>
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </>
+              )}
+            </svg>
+          </motion.button>
         </motion.div>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <>
+            <motion.div
+              className="mobile-nav-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <motion.div
+              className="mobile-nav"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            >
+              {/* Search in mobile menu */}
+              <motion.div style={{ marginBottom: '20px' }}>
+                <motion.input
+                  placeholder="Search..."
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    border: '1px solid #E5E7EB',
+                    borderRadius: '12px',
+                    outline: 'none',
+                    fontSize: '14px',
+                    color: '#2A254D',
+                    backgroundColor: '#F9FAFB',
+                    transition: 'all 0.2s ease'
+                  }}
+                />
+              </motion.div>
+
+              <motion.ul className="nav-links">
+                <motion.li><Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></motion.li>
+                <motion.li><Link href="#" onClick={() => setMobileMenuOpen(false)}>About</Link></motion.li>
+                <motion.li>
+                  <motion.button
+                    className="blog-btn"
+                    onClick={() => setBlogOpen(v => !v)}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      border: 'none',
+                      background: 'transparent',
+                      color: '#2A254D',
+                      cursor: 'pointer',
+                      padding: '0',
+                      borderRadius: '8px'
+                    }}
+                  >
+                    <span>Blog</span>
+                    <motion.span
+                      animate={{ rotate: blogOpen ? 180 : 0 }}
+                      style={{ display: 'inline-flex' }}
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </motion.span>
+                  </motion.button>
+                  {blogOpen && (
+                    <motion.ul
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      style={{
+                        listStyle: 'none',
+                        padding: '12px 0 0 16px',
+                        margin: 0
+                      }}
+                    >
+                      {blogLinks.map((item) => (
+                        <motion.li key={item.id} style={{ marginTop: '8px' }}>
+                          <Link href={item.href} onClick={() => setMobileMenuOpen(false)}>{item.title}</Link>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  )}
+                </motion.li>
+                <motion.li><Link href="#" onClick={() => setMobileMenuOpen(false)}>Contact</Link></motion.li>
+                <motion.li style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid #E5E7EB' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <GradiantButton href="/login" ariaLabel="Login" text="Login" />
+                    <GradiantButton href="/register" ariaLabel="Register" text="Register" />
+                  </div>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
+          </>
+        )}
       </motion.header>
   );
 } 

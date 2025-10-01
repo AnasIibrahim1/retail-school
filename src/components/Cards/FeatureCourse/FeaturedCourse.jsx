@@ -19,7 +19,7 @@ export default function FeaturedCourse({
     return (
         <article className="fc-card">
             <div className="fc-media">
-                <img className=" g" src={image} alt={title} />
+                <img className="fc-img" src={image} alt={title} />
                 <div className="fc-media-bottom">
                 {best_seller && <span className="fc-badge">BEST SELLER</span>}
                 </div>

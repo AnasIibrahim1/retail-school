@@ -63,13 +63,13 @@ export default function Home() {
 <div className='landing-page-content'>
 <HoverWords
   text="Find the Best Courses"
-  style={{fontSize: 'calc(2rem + 2vw)', fontWeight: 700, color: '#2A254D'}}
+  style={{fontWeight: 700, color: '#2A254D'}}
 />
   <p>Technology is bringing a massive wave of evolution on learning 
   things in different ways.</p>
   <GradiantButton href="/courses" ariaLabel="Courses" text="View Courses" padding="20px 30px" /> 
 </div>
-<div style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative',minWidth: '600px'}}>
+<div className='landing-page-circle' style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative',minWidth: '400px'}}>
   <div className="circle-1 circu">
   </div>
   <div className="circle-2 circu"></div>
@@ -78,15 +78,15 @@ export default function Home() {
 <div style={{width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative',zIndex: 2}}>
 <Circle/>
 </div>
-
-<div style={{position: 'absolute', top: 0, right: 0, width: '100%', height: '100%', zIndex: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', transform:'rotate(180deg)'}}>
-  <img src="/shapes/pattern_bg.svg" alt="" />
+<div className='landing-page-circle-dots' style={{position: 'absolute', top: 0, right: 0, width: '100%', height: '100%', zIndex: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', transform:'rotate(180deg)'}}>
+  <img src="/shapes/pattern_bg.svg" alt="" style={{width: '100%', height: '100%'}} />
 </div>
   </div>
 
-{/* <div style={{position: 'absolute', top: 0, right: 0, width: '100%', height: '70%', zIndex: 100, display: 'flex', justifyContent: 'end'}}>
+
+<div style={{position: 'absolute', top: 0, left: 0, zIndex: 0, height: '100%', display: 'flex', justifyContent: 'start', alignItems: 'start', transform:'rotate(180deg)'}}>
   <img src="/shapes/slider_body.svg" alt="" />
-</div> */}
+</div>
 <div className="wave">
   <Wave/>
 </div>
