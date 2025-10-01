@@ -1,0 +1,128 @@
+.category-card-link {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.category-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px 30px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 2px solid #E5E7EB;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    min-height: 200px;
+}
+
+.category-card:hover {
+    border-color: #FF2574;
+    box-shadow: 0 12px 40px rgba(255, 37, 116, 0.15);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FF2574 0%, #FFA35A 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(255, 37, 116, 0.2);
+    z-index: 2;
+}
+
+.category-icon svg {
+    width: 40px;
+    height: 40px;
+    color: #FFFFFF;
+    stroke: currentColor;
+    fill: none;
+}
+
+.category-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2A254D;
+    margin: 0;
+    text-align: center;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.category-underline {
+    height: 3px;
+    background: linear-gradient(90deg, #FF2574 0%, #FFA35A 100%);
+    border-radius: 2px;
+    align-self: center;
+}
+
+.category-bg-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #FF2574 0%, #FFA35A 100%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .category-card {
+        padding: 30px 20px;
+        min-height: 180px;
+    }
+
+    .category-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+    }
+
+    .category-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .category-name {
+        font-size: 18px;
+    }
+
+    .category-bg-effect {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-card {
+        padding: 24px 16px;
+        min-height: 160px;
+    }
+
+    .category-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+    }
+
+    .category-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .category-name {
+        font-size: 16px;
+    }
+}
+

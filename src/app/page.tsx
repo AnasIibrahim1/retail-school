@@ -7,6 +7,8 @@ import HoverWords from '@/components/HoverWords/HoverWords';
 import FeaturedTabs from '@/components/FeaturedTabs/FeaturedTabs';
 import React, { useMemo, useState } from 'react';
 import FeaturedCourse from '@/components/Cards/FeatureCourse/FeaturedCourse';
+import CategoriesSection from '@/components/CategoriesSection/CategoriesSection';
+import { categories } from '@/data/categories';
 
 import './style.css';
 
@@ -94,17 +96,14 @@ export default function Home() {
 </section>
 
 {/* Featured Courses */}
-<section className='featured-courses'>
+<section className='featured-courses unpad'>
   <div className='featured-courses-title'>
-    <div className='featured-courses-heading'>
+    <div className='titles-wrap'>
       <HoverWords
         text="Featured Courses"
-        style={{fontSize: 'calc(1rem + 2vw)', fontWeight: 700, color: '#2A254D'}}
+        style={{fontSize: 'calc(1.1rem + 2vw)', fontWeight: 700, color: '#2A254D'}}
       />
-      <HoverWords
-        text="Discover your perfect program in our courses."
-        style={{fontSize: 'calc(0.5rem + 0.5vw)', fontWeight: 400, color: '#77838F'}}
-      />
+        <p>Discover your perfect program in our courses.</p>
     </div>
     <FeaturedTabs onChange={handleTabChange} initial={selectedTab} />
   </div>
@@ -154,6 +153,18 @@ export default function Home() {
   </div>
 
 
+</section>
+
+{/* Trending Categories */}
+<section className='trending-categories'>
+  <div className='titles-wrap'>
+    <HoverWords
+      text="Trending Categories"
+      style={{fontSize: 'calc(1.1rem + 2vw)', fontWeight: 700, color: '#2A254D'}}
+    />
+    <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+  </div>
+  <CategoriesSection categories={categories} />
 </section>
 </>
   );
