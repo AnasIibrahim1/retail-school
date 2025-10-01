@@ -1,0 +1,127 @@
+.instructors-section {
+    width: 100%;
+}
+
+.instructors-grid-wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    gap: 8px;
+}
+
+.instructors-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.instructor-pager-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #E5E7EB;
+    background: #FFFFFF;
+    color: #2A254D;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.instructor-pager-arrow svg { 
+    width: 18px; 
+    height: 18px; 
+    stroke: currentColor; 
+    stroke-width: 2; 
+    fill: none; 
+    stroke-linecap: round; 
+    stroke-linejoin: round; 
+}
+
+.instructor-pager-arrow.is-active { 
+    background: #090761; 
+    color: #FFFFFF; 
+    border-color: #090761; 
+}
+
+.instructor-pager-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.instructor-pager-arrow--left { 
+    grid-column: 1; 
+}
+
+.instructor-pager-arrow--right { 
+    grid-column: 3; 
+}
+
+.instructors-pagination {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.instructor-pager-dots { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.instructor-pager-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #D1D5DB;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.instructor-pager-dot.is-active {
+    background: #090761;
+    width: 28px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .instructors-grid {
+        overflow-x: auto;
+    }
+    
+    .instructors-grid-wrap {
+        grid-template-columns: 36px 1fr 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .instructors-grid {
+        overflow-x: auto;
+    }
+    
+    .instructors-grid-wrap {
+        grid-template-columns: 32px 1fr 32px;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .instructor-pager-dot.is-active { 
+        animation: dotToLine 700ms ease forwards; 
+    }
+}
+
+@keyframes dotToLine {
+    0% { width: 8px; }
+    60% { width: 34px; }
+    100% { width: 28px; }
+}
+

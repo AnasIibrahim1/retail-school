@@ -1,0 +1,28 @@
+.events-section {
+    width: 100%;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet and below - 1 column */
+@media (max-width: 900px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .events-grid {
+        gap: 16px;
+    }
+}
+

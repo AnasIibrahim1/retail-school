@@ -15,6 +15,9 @@ section{
   align-items: start;
   gap: 6px;
 }
+.bm{
+  margin-bottom: 100px;
+}
 
 /* Landing Page */
 .landing-page{
@@ -190,6 +193,34 @@ section p{
   gap: 40px;
 }
 
+/* Upcoming Events */
+.upcoming-events {
+  padding: 60px 100px;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Latest News */
+.latest-news {
+  padding: 60px 100px;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Top Rating Instructors */
+.top-rating-instructors {
+  padding: 60px 100px;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+}
+
 
 
 
@@ -275,6 +306,9 @@ section p{
   }
 }
 @media (max-width: 600px) {
+  .bm{
+    margin-bottom: 50px;
+  }
   .featured-grid{
     overflow-x: auto;
   }
@@ -303,19 +337,28 @@ section p{
 }
 
 @media (max-width: 1200px) {
-  .trending-categories {
+  .trending-categories,
+  .upcoming-events,
+  .latest-news,
+  .top-rating-instructors {
     padding: 50px 60px;
   }
 }
 
 @media (max-width: 900px) {
-  .trending-categories {
+  .trending-categories,
+  .upcoming-events,
+  .latest-news,
+  .top-rating-instructors {
     padding: 40px 40px;
   }
 }
 
 @media (max-width: 600px) {
-  .trending-categories {
+  .trending-categories,
+  .upcoming-events,
+  .latest-news,
+  .top-rating-instructors {
     padding: 32px 20px;
     gap: 32px;
   }

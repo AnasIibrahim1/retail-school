@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import GradiantButton from '@/components/Buttons/GrediantButton/GradiantButton';
@@ -8,7 +9,13 @@ import FeaturedTabs from '@/components/FeaturedTabs/FeaturedTabs';
 import React, { useMemo, useState } from 'react';
 import FeaturedCourse from '@/components/Cards/FeatureCourse/FeaturedCourse';
 import CategoriesSection from '@/components/CategoriesSection/CategoriesSection';
+import EventsSection from '@/components/EventsSection/EventsSection';
+import NewsSection from '@/components/NewsSection/NewsSection';
+import InstructorsSection from '@/components/InstructorsSection/InstructorsSection';
 import { categories } from '@/data/categories';
+import { upcomingEvents } from '@/data/events';
+import { latestNews } from '@/data/news';
+import { topInstructors } from '@/data/instructors';
 
 import './style.css';
 
@@ -69,7 +76,7 @@ export default function Home() {
 />
   <p>Technology is bringing a massive wave of evolution on learning 
   things in different ways.</p>
-  <GradiantButton href="/courses" ariaLabel="Courses" text="View Courses" padding="20px 30px" /> 
+  <GradiantButton href="/courses" ariaLabel="Courses" text="View Courses" padding="20px 30px" onClick={() => {}} /> 
 </div>
 <div className='landing-page-circle' style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative',minWidth: '400px'}}>
   <div className="circle-1 circu">
@@ -96,7 +103,7 @@ export default function Home() {
 </section>
 
 {/* Featured Courses */}
-<section className='featured-courses unpad'>
+<section className='featured-courses unpad bm'>
   <div className='featured-courses-title'>
     <div className='titles-wrap'>
       <HoverWords
@@ -156,7 +163,7 @@ export default function Home() {
 </section>
 
 {/* Trending Categories */}
-<section className='trending-categories'>
+<section className='trending-categories bm'>
   <div className='titles-wrap'>
     <HoverWords
       text="Trending Categories"
@@ -165,6 +172,42 @@ export default function Home() {
     <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
   </div>
   <CategoriesSection categories={categories} />
+</section>
+
+{/* Upcoming Events */}
+<section className='upcoming-events bm'>
+  <div className='titles-wrap'>
+    <HoverWords
+      text="Upcoming Events"
+      style={{fontSize: 'calc(1.1rem + 2vw)', fontWeight: 700, color: '#2A254D'}}
+    />
+    <p>Join us for exciting learning opportunities and networking events.</p>
+  </div>
+  <EventsSection events={upcomingEvents} />
+</section>
+
+{/* latest News */}
+<section className='latest-news bm'>
+  <div className='titles-wrap'>
+    <HoverWords
+      text="Latest News"
+      style={{fontSize: 'calc(1.1rem + 2vw)', fontWeight: 700, color: '#2A254D'}}
+    />
+    <p>Stay updated with the latest news and insights from our community.</p>
+  </div>
+  <NewsSection news={latestNews} />
+</section>
+
+{/* Top Rating instructors */}
+<section className='top-rating-instructors bm'>
+  <div className='titles-wrap'>
+    <HoverWords
+      text="Top Rating Instructors"
+      style={{fontSize: 'calc(1.1rem + 2vw)', fontWeight: 700, color: '#2A254D'}}
+    />
+    <p>Meet our expert instructors who are passionate about teaching and learning.</p>
+  </div>
+  <InstructorsSection instructors={topInstructors} />
 </section>
 </>
   );

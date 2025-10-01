@@ -1,0 +1,62 @@
+.news-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.news-show-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Responsive Breakpoints */
+
+/* Large Desktop - 4 columns */
+@media (min-width: 1200px) {
+    .news-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop - 3 columns */
+@media (max-width: 1199px) and (min-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Tablet - 2 columns */
+@media (max-width: 899px) and (min-width: 600px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile - 1 column */
+@media (max-width: 599px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .news-section {
+        gap: 32px;
+    }
+
+    .news-show-more {
+        margin-top: 10px;
+    }
+}
+
