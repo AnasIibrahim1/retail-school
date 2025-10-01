@@ -1,19 +1,7 @@
 "use client"
 import OverlayIconButton, { EyeIcon, HeartIcon } from "@/components/Buttons/OverlayIconButton/OverlayIconButton";
-
-const BookIcon = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" width="16" height="16" {...props}>
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-        <path d="M20 22H6.5A2.5 2.5 0 0 1 4 19.5V5a2 2 0 0 1 2-2h14z"/>
-    </svg>
-);
-
-const ClockIcon = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" width="16" height="16" {...props}>
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 6v6l4 2"/>
-    </svg>
-);
+import { BookIcon, ClockIcon } from "./icons";
+import "./style.css";
 
 export default function FeaturedCourse({
     image = "/test/photo.jpg",
@@ -31,7 +19,7 @@ export default function FeaturedCourse({
     return (
         <article className="fc-card">
             <div className="fc-media">
-                <img className="fc-img" src={image} alt={title} />
+                <img className=" g" src={image} alt={title} />
                 <div className="fc-media-bottom">
                 {best_seller && <span className="fc-badge">BEST SELLER</span>}
                 </div>
