@@ -1,0 +1,31 @@
+/* BlogContent component specific styles */
+/* Most styles are in the main style.css file */
+
+.blog-content {
+  position: relative;
+}
+
+.blog-layout {
+  position: relative;
+}
+
+/* Additional responsive adjustments for content */
+@media (max-width: 768px) {
+  .blog-content {
+    padding: 60px 0;
+  }
+  
+  .blog-layout {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-content {
+    padding: 40px 0;
+  }
+  
+  .blog-layout {
+    gap: 20px;
+  }
+}
