@@ -1,0 +1,31 @@
+/* CourseContent component specific styles */
+/* Most styles are in the main style.css file */
+
+.course-content {
+  position: relative;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+/* Additional responsive adjustments for content */
+@media (max-width: 768px) {
+  .course-content {
+    padding: 60px 0;
+  }
+  
+  .content-wrapper {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-content {
+    padding: 40px 0;
+  }
+  
+  .content-wrapper {
+    padding: 0 16px;
+  }
+}

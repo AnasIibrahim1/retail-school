@@ -1,0 +1,33 @@
+/* CourseHero component specific styles */
+/* Most styles are in the main style.css file */
+
+.course-hero {
+  position: relative;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 2;
+}
+
+/* Additional responsive adjustments for hero */
+@media (max-width: 768px) {
+  .course-hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  
+  .hero-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-hero {
+    padding: 40px 0;
+  }
+  
+  .hero-grid {
+    gap: 20px;
+  }
+}
