@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "motion/react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname, useSearchParams } from "next/navigation"
 import GradiantButton from "../Buttons/GrediantButton/GradiantButton"
 import './style.css'
 
@@ -11,6 +12,13 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  
+  // Check if we're on courses page and get current category
+  const isOnCoursesPage = pathname === '/courses'
+  const currentCategory = searchParams.get('category')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,10 +45,34 @@ export default function Header() {
   }, [isMenuOpen])
 
   const courses = [
-    { id: 1, title: "Business Strategy", href: "/courses/business" },
-    { id: 2, title: "UI/UX Design", href: "/courses/design" },
-    { id: 3, title: "Web Development", href: "/courses/development" },
-    { id: 4, title: "Data Analysis", href: "/courses/data" }
+    { 
+      id: 1, 
+      title: "All Courses", 
+      href: "/courses",
+      category: null,
+      isActive: isOnCoursesPage && (!currentCategory || currentCategory === 'all')
+    },
+    { 
+      id: 2, 
+      title: "UI/UX Design", 
+      href: "/courses?category=design",
+      category: 'design',
+      isActive: isOnCoursesPage && currentCategory === 'design'
+    },
+    { 
+      id: 3, 
+      title: "Web Development", 
+      href: "/courses?category=development",
+      category: 'development',
+      isActive: isOnCoursesPage && currentCategory === 'development'
+    },
+    { 
+      id: 4, 
+      title: "Business", 
+      href: "/courses?category=business",
+      category: 'business',
+      isActive: isOnCoursesPage && currentCategory === 'business'
+    }
   ]
 
   const blogLinks = [
@@ -51,13 +83,13 @@ export default function Header() {
   ]
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Courses', href: '/courses' },
-    { name: 'About', href: '/about' },
-    { name: 'Instructors', href: '/instructors' },
-    { name: 'Events', href: '/events' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Home', href: '/', isActive: pathname === '/' },
+    { name: 'Courses', href: '/courses', isActive: isOnCoursesPage },
+    { name: 'About', href: '/about', isActive: pathname === '/about' },
+    { name: 'Instructors', href: '/instructors', isActive: pathname === '/instructors' },
+    { name: 'Events', href: '/events', isActive: pathname === '/events' },
+    { name: 'Blog', href: '/blog', isActive: pathname === '/blog' },
+    { name: 'Contact', href: '/contact', isActive: pathname === '/contact' }
   ]
 
   return (
@@ -136,18 +168,48 @@ export default function Header() {
                       }}
                       whileHover={{ 
                         x: 4,
-                        backgroundColor: 'rgba(255, 37, 116, 0.08)',
+                        backgroundColor: course.isActive ? 'rgba(255, 37, 116, 0.15)' : 'rgba(255, 37, 116, 0.08)',
                         transition: { duration: 0.2 }
                       }}
                       whileTap={{ scale: 0.98 }}
+                      style={{
+                        backgroundColor: course.isActive ? 'rgba(255, 37, 116, 0.12)' : 'transparent',
+                        fontWeight: course.isActive ? '600' : '400'
+                      }}
                     >
                       <motion.div
                         className="dropdown-accent"
                         initial={{ scaleY: 0 }}
                         whileHover={{ scaleY: 1 }}
                         transition={{ duration: 0.2 }}
+                        style={{
+                          backgroundColor: course.isActive ? '#FF2558' : 'transparent',
+                          scaleY: course.isActive ? 1 : 0
+                        }}
                       />
-                      <Link href={course.href}>{course.title}</Link>
+                      <Link 
+                        href={course.href}
+                        style={{
+                          color: course.isActive ? '#FF2558' : 'inherit',
+                          fontWeight: course.isActive ? '600' : '400'
+                        }}
+                      >
+                        {course.title}
+                        {course.isActive && (
+                          <motion.span
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.2 }}
+                            style={{
+                              marginLeft: '8px',
+                              fontSize: '12px',
+                              color: '#FF2558'
+                            }}
+                          >
+                            ✓
+                          </motion.span>
+                        )}
+                      </Link>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -381,20 +443,42 @@ export default function Header() {
                   >
                     <Link 
                       href={link.href}
-                      className="menu-link"
+                      className={`menu-link ${link.isActive ? 'active' : ''}`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <motion.span
                         whileHover={{ x: 10 }}
                         transition={{ duration: 0.2 }}
+                        style={{
+                          color: link.isActive ? '#FF2558' : 'inherit',
+                          fontWeight: link.isActive ? '600' : '400'
+                        }}
                       >
                         {link.name}
+                        {link.isActive && (
+                          <motion.span
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.2 }}
+                            style={{
+                              marginLeft: '8px',
+                              fontSize: '14px',
+                              color: '#FF2558'
+                            }}
+                          >
+                            ✓
+                          </motion.span>
+                        )}
                       </motion.span>
                       <motion.div 
                         className="menu-link-line"
                         initial={{ scaleX: 0 }}
                         whileHover={{ scaleX: 1 }}
                         transition={{ duration: 0.3 }}
+                        style={{
+                          backgroundColor: link.isActive ? '#FF2558' : 'currentColor',
+                          scaleX: link.isActive ? 1 : 0
+                        }}
                       />
                     </Link>
                   </motion.div>
