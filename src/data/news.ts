@@ -8,7 +8,7 @@ export const latestNews = [
     },
     date: 'Nov 10, 2024',
     image: '/test/photo.jpg',
-    href: '/news/web-development-trends-2024'
+    href: '/blog/news-1'
   },
   {
     id: 'news-2',
@@ -19,7 +19,7 @@ export const latestNews = [
     },
     date: 'Nov 8, 2024',
     image: '/test/photo.jpg',
-    href: '/news/ai-digital-marketing'
+    href: '/blog/news-2'
   },
   {
     id: 'news-3',
@@ -30,7 +30,7 @@ export const latestNews = [
     },
     date: 'Nov 6, 2024',
     image: '/test/photo.jpg',
-    href: '/news/uiux-best-practices'
+    href: '/blog/news-3'
   },
   {
     id: 'news-4',
@@ -41,7 +41,7 @@ export const latestNews = [
     },
     date: 'Nov 4, 2024',
     image: '/test/photo.jpg',
-    href: '/news/mastering-react-hooks'
+    href: '/blog/news-4'
   },
   {
     id: 'news-5',
@@ -52,7 +52,7 @@ export const latestNews = [
     },
     date: 'Nov 2, 2024',
     image: '/test/photo.jpg',
-    href: '/news/startup-growth-strategies'
+    href: '/blog/news-5'
   },
   {
     id: 'news-6',
@@ -63,7 +63,7 @@ export const latestNews = [
     },
     date: 'Oct 30, 2024',
     image: '/test/photo.jpg',
-    href: '/news/photography-tips'
+    href: '/blog/news-6'
   },
   {
     id: 'news-7',
@@ -74,7 +74,7 @@ export const latestNews = [
     },
     date: 'Oct 28, 2024',
     image: '/test/photo.jpg',
-    href: '/news/music-production-tools'
+    href: '/blog/news-7'
   },
   {
     id: 'news-8',
@@ -85,7 +85,7 @@ export const latestNews = [
     },
     date: 'Oct 26, 2024',
     image: '/test/photo.jpg',
-    href: '/news/data-analytics-guide'
+    href: '/blog/news-8'
   },
   {
     id: 'news-9',
@@ -96,7 +96,7 @@ export const latestNews = [
     },
     date: 'Oct 24, 2024',
     image: '/test/photo.jpg',
-    href: '/news/cloud-computing-future'
+    href: '/blog/news-9'
   },
   {
     id: 'news-10',
@@ -107,7 +107,7 @@ export const latestNews = [
     },
     date: 'Oct 22, 2024',
     image: '/test/photo.jpg',
-    href: '/news/cybersecurity-essentials'
+    href: '/blog/news-10'
   },
   {
     id: 'news-11',
@@ -118,7 +118,7 @@ export const latestNews = [
     },
     date: 'Oct 20, 2024',
     image: '/test/photo.jpg',
-    href: '/news/ecommerce-success-guide'
+    href: '/blog/news-11'
   },
   {
     id: 'news-12',
@@ -129,7 +129,7 @@ export const latestNews = [
     },
     date: 'Oct 18, 2024',
     image: '/test/photo.jpg',
-    href: '/news/ios-vs-android-2024'
+    href: '/blog/news-12'
   }
 ]
 
