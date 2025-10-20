@@ -1,0 +1,17 @@
+@media (max-width: 550px) {
+    .salary-lessons-salary{
+        font-size: 16px !important;
+        font-weight: 700;
+        color: #4F5DE4;
+    }
+    .salary-lessons-lessons{
+        font-size: 14px !important;
+        font-weight: 700;
+        color: #F57005;
+    } }
+
+@media (max-width: 400px){
+    .salary-lessons-lessons{
+        text-align: center !important;
+    }
+}

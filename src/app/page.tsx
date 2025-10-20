@@ -23,6 +23,7 @@ import './style.css';
 export default function Home() {
   const [selectedTab, setSelectedTab] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const gridRef = React.useRef<HTMLDivElement | null>(null);
@@ -62,8 +63,33 @@ export default function Home() {
   }, []);
 
   const handleTabChange = (key: string) => {
-    setSelectedTab(key);
-    setCurrentPage(1);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setSelectedTab(key);
+      setCurrentPage(1);
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const handlePageChange = (page: number) => {
+    if (page === currentPage) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentPage(page);
+      setIsTransitioning(false);
+    }, 150);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      handlePageChange(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < pageCount) {
+      handlePageChange(currentPage + 1);
+    }
   };
 
   return (
@@ -121,14 +147,14 @@ export default function Home() {
         className={`pager-arrow pager-arrow--left ${currentPage > 1 ? 'is-active' : ''}`}
         aria-label='Previous page'
         disabled={currentPage === 1}
-        onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+        onClick={handlePrevPage}
       >
         <svg viewBox="0 0 20 20" aria-hidden="true">
           <path d="M16 10H4"/>
           <path d="M8 6L4 10L8 14"/>
         </svg>
       </button>
-      <div className='featured-grid' ref={gridRef}>
+      <div className={`featured-grid ${isTransitioning ? 'page-transition' : ''}`} ref={gridRef}>
       {pagedItems.map((txt) => (
         <FeaturedCourse key={txt} />
       ))}
@@ -137,7 +163,7 @@ export default function Home() {
         className={`pager-arrow pager-arrow--right ${currentPage < pageCount ? 'is-active' : ''}`}
         aria-label='Next page'
         disabled={currentPage === pageCount}
-        onClick={() => setCurrentPage((p) => Math.min(pageCount, p + 1))}
+        onClick={handleNextPage}
       >
         <svg viewBox="0 0 20 20" aria-hidden="true">
           <path d="M4 10H16"/>
@@ -146,16 +172,40 @@ export default function Home() {
       </button>
     </div>
     <div className='featured-pagination' role='navigation' aria-label='Pagination'>
-      <div className='pager-dots' role='tablist' aria-label='Pages'>
-        {Array.from({ length: pageCount }, (_, i) => i + 1).map((p) => (
-          <button
-            key={p}
-            className={`pager-dot ${p === currentPage ? 'is-active' : ''}`}
-            onClick={() => setCurrentPage(p)}
-            aria-label={`Page ${p}`}
-            aria-current={p === currentPage ? 'page' : undefined}
-          />
-        ))}
+      <div className='pagination-wrapper'>
+        <div className='page-counter' aria-live='polite'>
+          <span className='current-page'>{currentPage}</span>
+          <span className='page-separator'>/</span>
+          <span className='total-pages'>{pageCount}</span>
+        </div>
+        <div className='pager-dots' role='tablist' aria-label='Pages'>
+          <div className='pager-dots-container' style={{
+            ['--active-index' as string]: currentPage - 1,
+            ['--dot-count' as string]: pageCount
+          }}>
+            {Array.from({ length: pageCount }, (_, i) => i + 1).map((p) => (
+              <button
+                key={p}
+                className={`pager-dot ${p === currentPage ? 'is-active' : ''}`}
+                onClick={() => handlePageChange(p)}
+                onKeyDown={(e) => {
+                  if (e.key === 'ArrowLeft' && p > 1) {
+                    handlePageChange(p - 1);
+                  } else if (e.key === 'ArrowRight' && p < pageCount) {
+                    handlePageChange(p + 1);
+                  }
+                }}
+                aria-label={`Page ${p}`}
+                aria-current={p === currentPage ? 'page' : undefined}
+              />
+            ))}
+          </div>
+          <div className='pagination-progress-bar'>
+            <div className='pagination-progress-fill' style={{
+              width: `${((currentPage) / pageCount) * 100}%`
+            }}></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

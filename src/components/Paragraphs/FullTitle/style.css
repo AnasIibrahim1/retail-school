@@ -1,0 +1,17 @@
+.full-title-h1{
+    font-size:40px;
+    font-weight:bold;
+    color:#2A254D;
+    margin-bottom:20px;
+}
+@media (max-width: 1000px) {
+    .full-title-h1{
+        font-size:30px !important;
+    }
+}
+@media (max-width: 500px) {
+    .full-title-h1{
+        font-size:24px !important;
+        font-size:24px;
+    }
+}
