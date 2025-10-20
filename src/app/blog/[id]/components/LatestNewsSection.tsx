@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { motion } from 'motion/react';
-import NewsCard from '@/components/Cards/NewsCard/NewsCard';
+import NewsCard from '@/components/cards/NewsCard/NewsCard';
 import { latestNews } from '@/data/news';
 import './LatestNewsSection.css';
 

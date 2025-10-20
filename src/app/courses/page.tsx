@@ -1,13 +1,13 @@
 "use client"
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useSearchParams } from 'next/navigation';
-import CourseCard from '@/components/Cards/CourseCard/CourseCard';
+import CourseCard from '@/components/cards/CourseCard/CourseCard';
 import { courses, getCoursesByCategory, Course } from '@/data/courses';
 import { categories } from '@/data/categories';
 import './style.css';
 
-export default function CoursesPage() {
+function CoursesContent() {
   const searchParams = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [displayedCourses, setDisplayedCourses] = useState<Course[]>([]);
@@ -231,5 +231,24 @@ export default function CoursesPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function CoursesPage() {
+  return (
+    <Suspense fallback={
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        fontSize: '18px',
+        color: '#2A254D'
+      }}>
+        Loading courses...
+      </div>
+    }>
+      <CoursesContent />
+    </Suspense>
   );
 }

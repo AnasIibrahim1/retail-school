@@ -42,13 +42,13 @@ export default function CourseContent({ course }: CourseContentProps) {
               <p>{course.description}</p>
               <p>
                 This comprehensive course is designed to take you from beginner to advanced level. 
-                You'll learn through hands-on projects, real-world examples, and practical exercises 
+                You&apos;ll learn through hands-on projects, real-world examples, and practical exercises 
                 that will help you build a strong foundation in this field.
               </p>
               <p>
                 Our expert instructors have years of industry experience and will guide you through 
                 each concept with clear explanations and practical demonstrations. By the end of this 
-                course, you'll have the skills and confidence to apply what you've learned in real-world scenarios.
+                course, you&apos;ll have the skills and confidence to apply what you&apos;ve learned in real-world scenarios.
               </p>
             </div>
           </motion.div>

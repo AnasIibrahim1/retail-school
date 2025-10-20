@@ -4,7 +4,7 @@ import React from "react";
 export type OverlayIconButtonProps = {
     label: string;
     onClick?: () => void;
-    Icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
+    Icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactElement;
     className?: string;
 };
 

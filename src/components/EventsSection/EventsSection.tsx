@@ -1,5 +1,5 @@
 "use client"
-import EventCard from '../Cards/EventCard/EventCard'
+import EventCard from '../cards/EventCard/EventCard'
 import './style.css'
 
 interface Event {

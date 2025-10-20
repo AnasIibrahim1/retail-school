@@ -100,6 +100,7 @@ export default function SubscribeSection() {
               />
               <div className="subscribe-button-wrapper">
                 <GradiantButton 
+                  href="#"
                   text="Subscribe" 
                   ariaLabel="Subscribe to newsletter"
                   onClick={handleSubscribe}

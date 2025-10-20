@@ -7,7 +7,7 @@ import Circle from '@/components/AnimationShapes/Circle/Circle';
 import HoverWords from '@/components/HoverWords/HoverWords';
 import FeaturedTabs from '@/components/FeaturedTabs/FeaturedTabs';
 import React, { useMemo, useState } from 'react';
-import FeaturedCourse from '@/components/Cards/FeatureCourse/FeaturedCourse';
+import FeaturedCourse from '@/components/cards/FeatureCourse/FeaturedCourse';
 import CategoriesSection from '@/components/CategoriesSection/CategoriesSection';
 import EventsSection from '@/components/EventsSection/EventsSection';
 import NewsSection from '@/components/NewsSection/NewsSection';

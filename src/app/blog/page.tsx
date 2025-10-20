@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 import { motion } from 'motion/react';
 import BlogHero from './components/BlogHero';

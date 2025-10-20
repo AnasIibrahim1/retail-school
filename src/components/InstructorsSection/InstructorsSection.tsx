@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect, useRef, useMemo } from 'react'
-import InstructorCard from '../Cards/InstructorCard/InstructorCard'
+import InstructorCard from '../cards/InstructorCard/InstructorCard'
 import './style.css'
 
 interface Instructor {

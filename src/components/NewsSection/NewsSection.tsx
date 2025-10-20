@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react'
-import NewsCard from '../Cards/NewsCard/NewsCard'
+import NewsCard from '../cards/NewsCard/NewsCard'
 import GradiantButton from '../Buttons/GrediantButton/GradiantButton'
 import './style.css'
 
@@ -49,7 +49,7 @@ export default function NewsSection({ news, initialCount = 8 }: NewsSectionProps
 
       {hasMore && (
         <div className="news-show-more">
-          <GradiantButton 
+          <GradiantButton href="#"
             text="Show More" 
             ariaLabel="Show more news"
             onClick={handleShowMore}

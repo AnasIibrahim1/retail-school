@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react'
-import CategoryCard from '../Cards/CategoryCard/CategoryCard'
+import CategoryCard from '../cards/CategoryCard/CategoryCard'
 import './style.css'
 
 interface Category {
