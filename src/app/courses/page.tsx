@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo, Suspense } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useSearchParams } from 'next/navigation';
-import CourseCard from '@/components/cards/CourseCard/CourseCard';
+import CourseCard from '@/components/cards/CourseCard';
 import { courses, getCoursesByCategory, Course } from '@/data/courses';
 import { categories } from '@/data/categories';
 import './style.css';
