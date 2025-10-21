@@ -3,7 +3,21 @@ import { motion } from "motion/react"
 import Link from "next/link"
 import './style.css'
 
-export default function GradiantButton( {href, ariaLabel, text, padding="10px 20px", onClick} ) {
+interface GradiantButtonProps {
+  href?: string;
+  ariaLabel?: string;
+  text: string;
+  padding?: string;
+  onClick?: () => void;
+}
+
+export default function GradiantButton({ 
+  href, 
+  ariaLabel, 
+  text, 
+  padding = "10px 20px", 
+  onClick 
+}: GradiantButtonProps) {
     const buttonContent = (
       <motion.button
         className="gradiant-btn"
@@ -41,4 +55,6 @@ export default function GradiantButton( {href, ariaLabel, text, padding="10px 20
             buttonContent
           )}
         </motion.div>
-    ) }
+    )
+}
+

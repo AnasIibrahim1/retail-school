@@ -103,7 +103,7 @@ export default function Home() {
 />
   <p>Technology is bringing a massive wave of evolution on learning 
   things in different ways.</p>
-  <GradiantButton href="/courses" ariaLabel="Courses" text="View Courses" padding="20px 30px" onClick={() => {}} /> 
+  <GradiantButton href="/courses" ariaLabel="Courses" text="View Courses" padding="20px 30px" /> 
 </div>
 <div className='landing-page-circle' style={{width: '50%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative',minWidth: '400px'}}>
   <div className="circle-1 circu">

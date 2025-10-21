@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { Suspense } from 'react';
 import './global.css';
 import '@fontsource/jost/400.css';
 import '@fontsource/jost/500.css';
@@ -26,7 +26,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <Header/>
+          <Suspense fallback={<div style={{ height: '80px' }} />}>
+            <Header/>
+          </Suspense>
           <CustomCursor />
           {children}
           <Footer />

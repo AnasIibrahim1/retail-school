@@ -235,7 +235,6 @@ export default function CourseHero({ course }: CourseHeroProps) {
                   text="Buy Now" 
                   padding="16px 32px"
                   ariaLabel="Buy this course"
-                  onClick={() => {}}
                 />
                 <motion.button
                   className="enroll-button"

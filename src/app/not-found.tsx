@@ -40,8 +40,8 @@ export default function NotFound() {
           marginBottom: 24
         }}>Sorry, we can’t find the page you’re looking for. It might have been moved or deleted.</p>
         <div style={{display:'flex', gap: 12, justifyContent:'center'}}>
-<GradiantButton href="/" ariaLabel="Courses" text="Home" padding="12px 18px" onClick={() => {}} />
-<GradiantButton href="/courses" ariaLabel="Courses" text="Browse courses" padding="12px 18px" onClick={() => {}} />
+<GradiantButton href="/" ariaLabel="Courses" text="Home" padding="12px 18px" />
+<GradiantButton href="/courses" ariaLabel="Courses" text="Browse courses" padding="12px 18px" />
         </div>
       </div>
     </section>
